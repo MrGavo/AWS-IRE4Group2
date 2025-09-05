@@ -26,9 +26,9 @@ BOOK
 
 
 
-Customer or employee?
-    CUSTOMER SIDE
-    Shop counter
+Customer or employee
+    * CUSTOMER SIDE
+    * Shop counter
          Menu food(drink and cakes)
             display menu
                 >ask to see alergens for x food?
