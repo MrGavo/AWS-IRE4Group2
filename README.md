@@ -27,31 +27,31 @@ BOOK
 
 
 Customer or employee
-    * CUSTOMER SIDE
-    * Shop counter
-         Menu food(drink and cakes)
+    CUSTOMER SIDE
+    Shop counter
+         Menu food drink and cakes
             display menu
-                >ask to see alergens for x food?
+                ask to see alergens for x food
             add or remove extra stuff
-            add to cart> ask if he wants anything else? y/n
+            add to cart, ask if he wants anything else y/n
                 enter code to add cart
             update stock
          Menu books
             display menu
-            add to cart> ask if he wants anything else? y/n
+            add to cart ask if he wants anything else y/n
                 enter code to add cart
             update stock
     show cart in counter with full price
-        Ask employee to add discount? y/n
-            How much?
+        Ask employee to add discount y/n
+            How much
 
 EMPLOYEE
-    Menu food/
-         stock level each food
-        >change price
-        >add or remove food
+    Menu food
+        stock level each food
+        change price
+        add or remove food
     Menu book
-        >stock level of books
-        >change price
-        >add or remove books
+        stock level of books
+        change price
+        add or remove books
     see Order
