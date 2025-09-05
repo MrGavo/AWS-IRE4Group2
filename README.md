@@ -27,6 +27,7 @@ BOOK
 
 
 Customer or employee
+
     CUSTOMER SIDE
     Shop counter
          Menu food drink and cakes
