@@ -45,8 +45,8 @@ Customer or employee
     show cart in counter with full price
         Ask employee to add discount y/n
             How much
-
 EMPLOYEE
+
     Menu food
         stock level each food
         change price
