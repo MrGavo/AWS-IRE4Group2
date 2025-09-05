@@ -1,0 +1,27 @@
+{
+    "Apple Pie": {
+        "name": "Apple Pie",
+        "price": 12.99,
+        "stock": 3
+    },
+    "Chocolate Cake": {
+        "name": "Chocolate Cake",
+        "price": 15.49,
+        "stock": 5
+    },
+    "Cinnamon Roll": {
+        "name": "Cinnamon Roll",
+        "price": 3.99,
+        "stock": 11
+    },
+    "Lemon Slice": {
+        "name": "Lemon Slice",
+        "price": 4.99,
+        "stock": 7
+    },
+    "Raspberry Muffin": {
+        "name": "Raspberry Muffin",
+        "price": 2.99,
+        "stock": 12
+    }
+}

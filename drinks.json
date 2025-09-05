@@ -1,0 +1,27 @@
+{
+    "Latte": {
+        "name": "Latte",
+        "price": 12.99,
+        "stock": 7
+    },
+    "Cappuccino": {
+        "name": "Cappuccino",
+        "price": 14.99,
+        "stock": 4
+    },
+    "Americano": {
+        "name": "Americano",
+        "price": 11.99,
+        "stock": 12
+    },
+    "Espresso": {
+        "name": "Espresso",
+        "price": 12.99,
+        "stock": 22
+    },
+    "Breakfast Tea": {
+        "name": "Breakfast Tea",
+        "price": 12.99,
+        "stock": 6
+    }
+}

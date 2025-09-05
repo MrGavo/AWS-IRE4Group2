@@ -1,0 +1,37 @@
+{
+    "Python For Dummies": {
+        "name": "Python For Dummies",
+        "price": 19.99,
+        "stock": 12,
+        "genre": "Programming",
+        "author": "John Doe"
+    },
+    "Matter": {
+        "name": "Matter",
+        "price": 29.99,
+        "stock": 4,
+        "genre": "Science Fiction",
+        "author": "Iain M. Banks"
+    },
+    "The Life and Cuisine of Elvis Presley": {
+        "name": "The Life and Cuisine of Elvis Presley",
+        "price": 99.99,
+        "stock": 99,
+        "genre": "Cookbook",
+        "author": "Elvis Presley"
+    },
+    "Book": {
+        "name": "Book",
+        "price": 59.99,
+        "stock": 7,
+        "genre": "Biography",
+        "author": "Whoppi Goldberg"
+    },
+    "Twilight": {
+        "name": "Twilight",
+        "price": 39.99,
+        "stock": 76,
+        "genre": "Fantasy",
+        "author": "Stephenie Meyer"
+    }
+}

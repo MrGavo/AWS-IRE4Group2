@@ -1,33 +1,51 @@
 # AWS-IRE4Group2
-Books and Coffee
+The Coffee Stain
+================
+    Program to model a Bookshop and Cafe
 
-CLASSES
-
-CAKE
-* Name
-* Price
-* Stock
-
-
-DRINK
-* Name
-* Price
-* Size
-* Stock
-
-
-BOOK
-* Name
-* Price
-* Stock
-* Genre
-* Author
+Modules
+-
+    \---AWS-IRE4Group2
+        |   books.json              - Books Data
+        |   cakes.json              - Cakes Data
+        |   drinks.json             - Drinks Data
+        |   jsonio.py               - Json IO Module
+        |   main.py                 - Main Program
+        |   Product.py              - Product Classes
+        |   README.md
+        |   test_classes.py         - Test Module for Classes
+        |   test_jsonio.py          - Test module for Json IO
 
 
+Classes
+-
+
+    Product
+    * name
+    * price
+    * stock
+
+    Cake (Inherits from Product)
 
 
-Customer or employee
+    Drink (Inherits from Product)
+    * size
 
+    Book (Inherits from Product)
+    * genre
+    * author
+
+Json Storage
+-
+    3 json files to store product data
+    cakes.json
+    drinks.json
+    books.json
+
+
+
+Customer
+-
     CUSTOMER SIDE
     Shop counter
          Menu food drink and cakes
@@ -45,8 +63,9 @@ Customer or employee
     show cart in counter with full price
         Ask employee to add discount y/n
             How much
-EMPLOYEE
 
+Employee
+-
     Menu food
         stock level each food
         change price
@@ -56,3 +75,5 @@ EMPLOYEE
         change price
         add or remove books
     see Order
+
+
