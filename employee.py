@@ -1,5 +1,5 @@
 '''
-    Employee class with getter and setters for 'id' and 'name'.
+    Employee class with getters and setters for 'id' and 'name'.
 '''
 
 class Employee():
