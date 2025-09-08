@@ -17,62 +17,72 @@ def employee(name):
 def customer_interface(name):
     #display menu for cakes
     cust = ''
-    print(f"welcome {name}")
-    while cust != "checkout":
+    
+    while cust != "o":
         os.system('cls' if os.name == 'nt' else 'clear')
-        cust = input("Are you interested in drinks, cakes or books? Or checkout to proceed\n")
+        print(f"Welcome {name} !\n")
+        print("Can we interest you in some...")
+        print("(D)rinks")
+        print("(C)akes")
+        print("(B)ooks")
+        print("Or are you ready to Check(O)ut ?")
+        cust = input("Please make your selection : ")
         cust = cust.lower()
-        if cust == "drinks":
+        if cust == "d":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Today's drink menu is")
             time.sleep(1)        
             menu_select(drinks)
             cust = ''
-        elif cust == "cakes":
+        elif cust == "c":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Today's cakes menu is")
             time.sleep(1)
             menu_select(cakes)
             cust = ''
-        elif cust == "books":
+        elif cust == "b":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("See what's in our book shelf")
             time.sleep(1) 
             menu_select(books)
             cust = ''
-        else:
-            print("sorry not available today")
-            continue
-    print(order) # MrGavo : just checking to see if all items are being addded
+        # else:
+        #     print("sorry not available today")
+        #     continue
+    # print(order) # MrGavo : just checking to see if all items are being addded
     time.sleep(1)
 
+# Menu length should be dynamic now based on the number of Products
 def menu_select(product):
-    selection = 1
-    while selection !=0:
+    selection = -1
+    product_keys = list(product.keys())
+    num_products = len(product_keys)
+
+    while selection != 0:
         os.system('cls' if os.name == 'nt' else 'clear')
+        
         # Iterating through the list of products - enumerate just puts a number beside each product
         for i, k in enumerate(product, start=1):
-            print(i, k.ljust(40), product[k]['description'])
-        print ('0 To Proceed')
-        selection = int(input("Select Item to add to your Basket : "))
-        if selection == 1:
-            print("Adding ", list(product.keys())[0], " to your basket")
-            order.append(list(product.keys())[0]) #MrGavo : This is just how i was adding to an order list - you can change
-            # MrGavo : Another option is to create an instance of the class
-            # MrGavo : You would need to pass another arg for instance type eg. Cake, Drink, Book
-            # item = Cake(**cakes[list(product.keys())[0]])
-        elif selection == 2:
-            print("Adding ", list(product.keys())[1], " to your basket")
-            order.append(list(product.keys())[1]) #MrGavo : This is just how i was adding to an order list - you can change
-        elif selection == 3:
-            print("Adding ", list(product.keys())[2], " to your basket")
-            order.append(list(product.keys())[2]) #MrGavo : This is just how i was adding to an order list - you can change
-        elif selection == 4:
-            print("Adding ", list(product.keys())[3], " to your basket")
-            order.append(list(product.keys())[3]) #MrGavo : This is just how i was adding to an order list - you can change
-        elif selection == 5:
-            print("Adding ", list(product.keys())[4], " to your basket")
-            order.append(list(product.keys())[4]) #MrGavo : This is just how i was adding to an order list - you can change
+            print(f"{i}. {k.ljust(40)} {product[k]['description']}")
+        print('0. To Proceed')
+        
+        try:
+            selection = int(input("Select item to add to your basket: "))
+
+            if selection >= 1 and selection <= num_products:
+                item_to_add = product_keys[selection - 1]
+                print(f"Adding {item_to_add} to your basket")
+                order.append(item_to_add) #MrGavo : This is just how i was adding to an order list - you can change
+                # MrGavo : Another option is to create an instance of the class
+                # MrGavo : You would need to pass another arg for instance type eg. Cake, Drink, Book
+                # item = Cake(**cakes[item_to_add])
+            elif selection == 0:
+                print("Proceeding to checkout...")
+            else:
+                print("Invalid selection. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
         time.sleep(2)
 
 
