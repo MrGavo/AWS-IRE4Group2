@@ -30,7 +30,7 @@ def customer_interface(name):
 def main():
     while True:
         #asks if it is the employee or the customer that will log in
-        os.system("cls")
+        #os.system("cls")
         person = input("Employee or Customer (E/C): ").lower()
         #if the person is Employee, call the definition of employee
         if person == "e":
@@ -43,7 +43,14 @@ def main():
             os.system("cls")
             print("Welcome to The Coffee Stain")
             name = input("Please enter your name: ").title()
-            customer_interface(name)
+            new_customer = Customer.Customer(name,1)
+            # new_customer.add_cart("cake")
+            # new_customer.add_cart("coffee")
+            # new_customer.add_cart("coke")
+            # new_customer.show_cart()
+            # new_customer.rv_cart("coke")
+            # new_customer.show_cart()
+            #customer_interface(name)
             
             #print ("customer")
         else:

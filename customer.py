@@ -7,6 +7,9 @@ class Customer():
     def add_cart(self,item):
         self.cart.append(item)
     
+    def rv_cart(self, item):
+        self.cart.remove(item)
+    
     def show_cart(self):
         print(self.cart)
 
