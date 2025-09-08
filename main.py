@@ -1,5 +1,7 @@
 import os
 from Product import Cake, Drink, Book
+import jsonio
+
 
 
 def employee(name):
@@ -9,6 +11,19 @@ def employee(name):
 def customer(name):
     #display menu for cakes
     print(f"welcome {name}")
+    cust = input("Are you interested in drinks, cakes or books? \n")
+    cust = cust.lower()
+    if cust == "drinks":
+        print("Today's drink menu is")
+    elif cust == "cakes":
+        print("Today's cakes menu is")
+        cakes = jsonio.read_cakes()
+        for k in cakes:
+            print(k, cakes[k]['description'])
+    elif cust == "books":
+        print("See what's in our book shelf")
+    else:
+        print("sorry not available today")
 
 
 
