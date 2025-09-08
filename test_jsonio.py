@@ -10,6 +10,7 @@ the write lines below.
 
 import os
 from jsonio import read_books, read_cakes, read_drinks, write_books, write_cakes, write_drinks
+from Product import Cake, Drink, Book
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -18,7 +19,7 @@ cake1 = {
     "Apple Pie": {
         "name": "Apple Pie",
         "price": 12.99,
-        "stock": 3
+        "stock": 4
     }
 }
 cake2 = {
@@ -136,6 +137,7 @@ book5 = {
 
 # Write sample data to JSON files
 # If you want to use this then first delete existing json files and uncomment these lines
+# If you change any of the indiviual values - eg the price of Apple Pie then write will update the json
 # write_cakes(cake1)
 # write_cakes(cake2)
 # write_cakes(cake3)
@@ -153,16 +155,33 @@ book5 = {
 # write_books(book5)
 
 # Read and print data from JSON files
-print("\nCAKES")
-print(read_cakes())
-print(type(read_cakes()))
-print("\nDRINKS")
-print(read_drinks())
-print(type(read_drinks()))
-print("\nBOOKS")
-print(read_books())
-print(type(read_books()))
+# print("\nCAKES")
+# print(read_cakes())
+# print(type(read_cakes()))
+# print("\nDRINKS")
+# print(read_drinks())
+# print(type(read_drinks()))
+# print("\nBOOKS")
+# print(read_books())
+# print(type(read_books()))
 
+
+# Access individual Dicts
+# cakes = read_cakes()
+# print(cakes.keys())
+# for k in cakes:
+#     print(k)
+# print(cakes.values())
+# print(cakes['Apple Pie'])
+# print(cakes['Apple Pie']['price'])
+
+
+# Read cakes.json into a dictionary of dictionaries
+# Update price of Apple Pie
+# Write back to json
+# cakes = read_cakes()
+# cakes['Apple Pie']['price'] = 33.44
+# write_cakes(cakes)
 
 
 
