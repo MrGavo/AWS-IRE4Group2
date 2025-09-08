@@ -2,26 +2,31 @@
     "Latte": {
         "name": "Latte",
         "price": 12.99,
+        "description": "Creamy latte with steamed milk",
         "stock": 7
     },
     "Cappuccino": {
         "name": "Cappuccino",
         "price": 14.99,
+        "description": "Espresso with frothy milk",
         "stock": 4
     },
     "Americano": {
         "name": "Americano",
         "price": 11.99,
+        "description": "Espresso with hot water",
         "stock": 12
     },
     "Espresso": {
         "name": "Espresso",
         "price": 12.99,
+        "description": "Strong and bold espresso shot",
         "stock": 22
     },
     "Breakfast Tea": {
         "name": "Breakfast Tea",
         "price": 12.99,
+        "description": "Classic black tea blend",
         "stock": 6
     }
 }

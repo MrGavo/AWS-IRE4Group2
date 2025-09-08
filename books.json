@@ -2,6 +2,7 @@
     "Python For Dummies": {
         "name": "Python For Dummies",
         "price": 19.99,
+        "description": "A beginner's guide to Python programming",
         "stock": 12,
         "genre": "Programming",
         "author": "John Doe"
@@ -9,6 +10,7 @@
     "Matter": {
         "name": "Matter",
         "price": 29.99,
+        "description": "A science fiction novel exploring the nature of reality",
         "stock": 4,
         "genre": "Science Fiction",
         "author": "Iain M. Banks"
@@ -16,6 +18,7 @@
     "The Life and Cuisine of Elvis Presley": {
         "name": "The Life and Cuisine of Elvis Presley",
         "price": 99.99,
+        "description": "A biography and cookbook about the King of Rock and Roll... Mmmmmm Cheese Burger",
         "stock": 99,
         "genre": "Cookbook",
         "author": "Elvis Presley"
@@ -23,6 +26,7 @@
     "Book": {
         "name": "Book",
         "price": 59.99,
+        "description": "A fascinating biography of a remarkable individual.",
         "stock": 7,
         "genre": "Biography",
         "author": "Whoppi Goldberg"
@@ -30,6 +34,7 @@
     "Twilight": {
         "name": "Twilight",
         "price": 39.99,
+        "description": "A captivating novel about love and vampires.",
         "stock": 76,
         "genre": "Fantasy",
         "author": "Stephenie Meyer"
