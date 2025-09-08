@@ -1,7 +1,7 @@
 class Customer():
-    def __init__(self,name, order):
+    def __init__(self,name):
         self.name = name
-        self.order = order
+        # self.order = order
         self.cart = []
 
     def add_cart(self,item):
@@ -13,7 +13,7 @@ class Customer():
     def show_cart(self):
         print(self.cart)
 
-newcust = Customer("gerardo", 1)
+# newcust = Customer("gerardo", 1)
 
-newcust.add_cart("cakes")
-newcust.show_cart()
+# newcust.add_cart("cakes")
+# newcust.show_cart()

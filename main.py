@@ -92,7 +92,7 @@ def main():
             os.system("cls")
             print("Welcome to The Coffee Stain")
             name = input("Please enter your name: ").title()
-            new_customer = Customer.Customer(name,1)
+            new_customer = Customer.Customer(name)
             # new_customer.add_cart("cake")
             # new_customer.add_cart("coffee")
             # new_customer.add_cart("coke")
