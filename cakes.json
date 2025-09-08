@@ -2,26 +2,31 @@
     "Apple Pie": {
         "name": "Apple Pie",
         "price": 12.99,
-        "stock": 3
+        "description": "Delicious apple pie with a flaky crust",
+        "stock": 4
     },
     "Chocolate Cake": {
         "name": "Chocolate Cake",
         "price": 15.49,
+        "description": "Rich chocolate cake with creamy frosting",
         "stock": 5
     },
     "Cinnamon Roll": {
         "name": "Cinnamon Roll",
         "price": 3.99,
+        "description": "Warm cinnamon roll with icing",
         "stock": 11
     },
     "Lemon Slice": {
         "name": "Lemon Slice",
         "price": 4.99,
+        "description": "Tangy lemon slice with a sweet glaze",
         "stock": 7
     },
     "Raspberry Muffin": {
         "name": "Raspberry Muffin",
         "price": 2.99,
+        "description": "Moist muffin filled with fresh raspberries",
         "stock": 12
     }
 }
