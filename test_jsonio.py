@@ -9,6 +9,7 @@ the write lines below.
 
 
 import os
+from select import select
 from jsonio import read_books, read_cakes, read_drinks, write_books, write_cakes, write_drinks
 from Product import Cake, Drink, Book
 
@@ -182,14 +183,68 @@ book5 = {
 
 
 # Access individual Dicts
-# cakes = read_cakes()
-# print(cakes.keys())
+cakes = read_cakes()
+drinks = read_drinks()
+books = read_books()
+# # print(cakes.keys())
 # for k in cakes:
-#     print(k)
+#     print(k.ljust(30), cakes[k]['description'])
+# input("What Cake would you like to buy? : ")
+order = []
+
+def menu_select(product, option):
+    if option == 1:
+        print("Adding ", list(product.keys())[0], " to your basket")
+        order.append(list(product.keys())[0])
+    elif option == 2:
+        print("Adding ", list(product.keys())[1], " to your basket")
+        order.append(list(product.keys())[1])
+    elif option == 3:
+        print("Adding ", list(product.keys())[2], " to your basket")
+        order.append(list(product.keys())[2])
+    elif option == 4:
+        print("Adding ", list(product.keys())[3], " to your basket")
+        order.append(list(product.keys())[3])
+    elif option == 5:
+        print("Adding ", list(product.keys())[4], " to your basket")
+        order.append(list(product.keys())[4])
+
+
+for i, k in enumerate(cakes, start=1):
+    print(i, k.ljust(40), cakes[k]['description'])
+selection = int(input("What Cake would you like to buy? : "))
+menu_select(cakes, selection)
+
+for i, k in enumerate(drinks, start=1):
+    print(i, k.ljust(40), drinks[k]['description'])
+selection = int(input("What Drink would you like to buy? : "))
+menu_select(drinks, selection)
+
+
+for i, k in enumerate(books, start=1):
+    print(i, k.ljust(40), books[k]['description'])
+selection = int(input("What Book would you like to buy? : "))
+menu_select(books, selection)
+# if selection == 1:
+#     print("Adding ", list(cakes.keys())[0], " to your basket")
+#     order.append(list(cakes.keys())[0])
+# elif selection == 2:
+#     print("Adding ", list(cakes.keys())[1], " to your basket")
+#     order.append(list(cakes.keys())[1])
+# elif selection == 3:
+#     print("Adding ", list(cakes.keys())[2], " to your basket")
+#     order.append(list(cakes.keys())[2])
+# elif selection == 4:
+#     print("Adding ", list(cakes.keys())[3], " to your basket")
+#     order.append(list(cakes.keys())[3])
+# elif selection == 5:
+#     print("Adding ", list(cakes.keys())[4], " to your basket")
+#     order.append(list(cakes.keys())[4])
+
 # print(cakes.values())
 # print(cakes['Apple Pie'])
 # print(cakes['Apple Pie']['price'])
-
+print (order)
 
 # Read cakes.json into a dictionary of dictionaries
 # Update price of Apple Pie
