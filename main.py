@@ -9,6 +9,8 @@ drinks = jsonio.read_drinks()
 books = jsonio.read_books()
 
 order = [] # MrGavo : This is just how i was adding to an order list - you can change
+price = []
+
 
 def employee(name):
     #display menu for employees
@@ -18,7 +20,7 @@ def customer_interface(name):
     #display menu for cakes
     cust = ''
     
-    while cust != "o":
+    while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Welcome {name} !\n")
         print("Can we interest you in some...")
@@ -26,8 +28,7 @@ def customer_interface(name):
         print("(C)akes")
         print("(B)ooks")
         print("Or are you ready to Check(O)ut ?")
-        cust = input("Please make your selection : ")
-        cust = cust.lower()
+        cust = input("Please make your selection : ").lower()
         if cust == "d":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Today's drink menu is")
@@ -46,24 +47,40 @@ def customer_interface(name):
             time.sleep(1) 
             menu_select(books)
             cust = ''
-        # else:
-        #     print("sorry not available today")
-        #     continue
+        elif cust== "o":
+            print("Going to check your basket")
+            print(order)
+            remove = input("Do you want to (A)dd or (R)emove more items?: ").lower()
+            if remove == "a":
+                continue
+            elif remove == "r":
+                #Shows the list of the order that the customer placed with the price
+                for i, k in enumerate(order, start=1):
+                    print(f"{i}. {k.ljust(40)} {price[i-1]}")
+                print('0. To Proceed')
+            else:
+                break   
+            break
+        else:
+            print("Sorry not available today")
+            continue
     # print(order) # MrGavo : just checking to see if all items are being addded
     time.sleep(1)
+
 
 # Menu length should be dynamic now based on the number of Products
 def menu_select(product):
     selection = -1
     product_keys = list(product.keys())
     num_products = len(product_keys)
+    
 
     while selection != 0:
         os.system('cls' if os.name == 'nt' else 'clear')
         
         # Iterating through the list of products - enumerate just puts a number beside each product
         for i, k in enumerate(product, start=1):
-            print(f"{i}. {k.ljust(40)} {product[k]['description']}")
+            print(f"{i}. {k.ljust(20)} {product[k]['price']} {product[k]['description']}")
         print('0. To Proceed')
         
         try:
@@ -71,13 +88,19 @@ def menu_select(product):
 
             if selection >= 1 and selection <= num_products:
                 item_to_add = product_keys[selection - 1]
+                #access the value of price in the dictionary
+                price_to_add = product[item_to_add]["price"]
+                # print(f"Adding {price_to_add}")
                 print(f"Adding {item_to_add} to your basket")
                 order.append(item_to_add) #MrGavo : This is just how i was adding to an order list - you can change
+                price.append(price_to_add) #adds the price to the table
+
                 # MrGavo : Another option is to create an instance of the class
                 # MrGavo : You would need to pass another arg for instance type eg. Cake, Drink, Book
                 # item = Cake(**cakes[item_to_add])
             elif selection == 0:
                 print("Proceeding to checkout...")
+
             else:
                 print("Invalid selection. Please try again.")
         except ValueError:
@@ -90,6 +113,7 @@ def main():
     while True:
         #asks if it is the employee or the customer that will log in
         #os.system("cls")
+        
         person = input("Employee or Customer (E/C): ").lower()
         #if the person is Employee, call the definition of employee
         if person == "e":
