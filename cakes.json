@@ -28,5 +28,11 @@
         "price": 2.99,
         "description": "Moist muffin filled with fresh raspberries",
         "stock": 12
+    },
+    "Gooseberry Tart": {
+        "name": "Gooseberry Tart",
+        "description": " 'Fresh gooseberries from our own garden.'",
+        "price": 5.99,
+        "stock": 5
     }
 }

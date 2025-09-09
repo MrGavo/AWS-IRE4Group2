@@ -1,4 +1,5 @@
 import jsonio
+import pprint
 # Created a class for employee 
 class Employee:
     def __init__(self, name):
@@ -19,7 +20,7 @@ class Employee:
             if options == "1":
                 self.add_product()
             elif options == "2":
-                self.view_product()
+                self.view_products()
             elif options == "3":
                 self.remove_product()
             elif options == "4":
@@ -56,19 +57,23 @@ class Employee:
             print("Invalid category.")
 
 
-    def view_product(self):
-        print("\n--- Cakes ---")
-        cakes = jsonio.read_cakes() 
-        print("\n--- Drinks ---")  
-        drinks = jsonio.read_drinks()  
+    def view_products(self):
         print("\n--- Books ---")
         books = jsonio.read_books()
+        # print json to screen with human-friendly formatting
+        pprint.pprint(books, compact=True)
+        print("\n--- Cakes ---")
+        cakes = jsonio.read_cakes() 
+        pprint.pprint(cakes, compact=True)
+        print("\n--- Drinks ---")
+        drinks = jsonio.read_drinks()  
+        pprint.pprint(drinks, compact=True)
 
 
     def remove_product(self):
         product = input("Remove from which category? (cakes/drinks/books): ").lower()
         if product == "cakes":
-            stock = jsonio.read_cakes() 
+            stock = jsonio.read_cakes()
         elif product == "drinks":
             stock = jsonio.read_drinks() 
         elif product == "books":
