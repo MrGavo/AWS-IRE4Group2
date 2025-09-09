@@ -78,9 +78,11 @@ def menu_remove():
             select = int(input("Select the item you want to remove: "))
             
             if select >= 1 and select <= length:
-                print(f"Removed {order[select-1]}")
-                order.remove(order[select-1])
-                price.remove(price[select-1])
+                print(f"Removed {order[select-1]} {price[select-1]}")
+                order.pop(select-1)
+                print(price[select-1])
+                price.pop(select-1)
+                time.sleep(1)
             elif select == 0:
                 print("Proceeding to checkout...")
                 break
@@ -147,6 +149,8 @@ def main():
         #If the person is customer, call definition of customer
         elif person == "c":
             os.system('cls' if os.name == 'nt' else 'clear')
+            #clear the list
+
             print("Welcome to The Coffee Stain")
             name = input("Please enter your name: ").title()
             # new_customer = Customer.Customer(name)
