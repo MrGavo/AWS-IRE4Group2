@@ -51,13 +51,17 @@ def customer_interface(name):
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Going to check your basket")
             length = len(order)
+            #display the list of the basket and the total
             for i in range(0, length):
                 print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
             print(f"Total:  {sum(price)}€")
             print('0. To Proceed')
+            #Asks what to remove of the basket
             remove = input("Do you want to (A)dd or (R)emove more items?: ").lower()
+            #goes back to the main screen
             if remove == "a":
                 continue
+            #goes to the remove screen
             elif remove == "r":
                 menu_remove()
                 
@@ -75,6 +79,7 @@ def menu_remove():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         length = len(order)
+        #display a list of the items in the cart and the total price
         for i in range(0, length):
             print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
         print(f"Total:  {sum(price)}€")
@@ -85,6 +90,7 @@ def menu_remove():
             
             if select >= 1 and select <= length:
                 print(f"Removed {order[select-1]} -- {price[select-1]}")
+                #Removes the selected item and the price of the list
                 order.pop(select-1)
                 price.pop(select-1)
                 time.sleep(1)
