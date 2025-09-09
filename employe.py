@@ -5,6 +5,8 @@ class Employee:
         self.name = name
 
     def menu(self):
+
+        
         print(f"\nWelcome {self.name} back")
         while True:
             print("\n--- Employee Menu ---")
@@ -19,7 +21,7 @@ class Employee:
             if options == "1":
                 self.add_product()
             elif options == "2":
-                self.view_products()
+                self.view_product()
             elif options == "3":
                 self.remove_product()
             elif options == "4":
@@ -29,8 +31,53 @@ class Employee:
                 break
             else:
                 print("Invalid choice, try again.")
-
+##Add a new product to cakes, drinks, or books.
     def add_product(self):
+        product = input("Which category you want to add? (cakes/drinks/books): ").lower()
+        name = input("Enter product name: ")
+        price = float(input("Enter price: "))
+        description = input("Please provide the description" )
+        stock = int(input("Enter stock quantity: "))
+        ## Created a dictionary to add new items 
+        new_item = {
+        name: {
+            "name" : name,
+        "description": description,
+        "price": price,
+            "stock": stock
+            }
+        }
+
+        if product == "cakes":
+            jsonio.write_cakes(new_item)
+        elif product == "drinks":
+            jsonio.write_drinks(new_item)
+        elif product == "books":
+            jsonio.write_books(new_item)
+        else:
+            print("Invalid category.")
+
+
+    def view_product(self):
+        print("\n--- Cakes ---")
+        cakes = jsonio.read_cakes() 
+        print("\n--- Drinks ---")  
+        drinks = jsonio.read_drinks()  
+        print("\n--- Books ---")
+        books = jsonio.read_books()
+
+
+    def remove_product(self):
+        product = input("Remove from which category? (cakes/drinks/books): ").lower()
+        if product == "cakes":
+            stock = jsonio.read_cakes() 
+        elif product == "drinks":
+            stock = jsonio.read_drinks() 
+        elif product == "books":
+            stock = jsonio.read_books()
+        else:
+            print("Invalid category.")
+            return
 
          
 
