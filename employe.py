@@ -142,8 +142,8 @@ class Employee:
         else:
             print(f"{item_to_remove} not found in {product}.")
 
-one=Employee ("name")    
-one.remove_product()   
+# one=Employee ("name")    
+# one.remove_product()   
     
    ## def check_stock(self):
 
