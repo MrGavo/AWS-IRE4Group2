@@ -28,5 +28,11 @@
         "price": 12.99,
         "description": "Classic black tea blend",
         "stock": 6
+    },
+    "latte": {
+        "name": "latte",
+        "price": 12.99,
+        "description": "Creamy latte with steamed milk",
+        "stock": 7
     }
 }
