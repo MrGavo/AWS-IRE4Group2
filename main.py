@@ -3,6 +3,7 @@ import jsonio
 import time
 from Product import Cake, Drink, Book
 import customer as Customer
+import employe
 
 cakes = jsonio.read_cakes()
 drinks = jsonio.read_drinks()
@@ -27,6 +28,7 @@ def customer_interface(name):
         print("(D)rinks")
         print("(C)akes")
         print("(B)ooks")
+        print("Do you want to see (A)llergens ?")
         print("Or are you ready to Check(O)ut ?")
         cust = input("Please make your selection : ").lower()
         if cust == "d":
@@ -48,17 +50,42 @@ def customer_interface(name):
             menu_select(books)
             cust = ''
         elif cust== "o":
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Going to check your basket")
-            print(order)
+            length = len(order)
+            #display the list of the basket and the total
+            for i in range(0, length):
+                print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
+            print(f"Total:  {sum(price)}€")
+            print('0. To Proceed')
+            #Asks what to remove of the basket
             remove = input("Do you want to (A)dd or (R)emove more items?: ").lower()
+            #goes back to the main screen
             if remove == "a":
                 continue
+            #goes to the remove screen
             elif remove == "r":
                 menu_remove()
                 
             else:
                 break   
             break
+        elif cust == "a":
+            Chocolate_cake_allergens = "gluten, eggs, milk, butter, cocoa powder"
+            Apple_pie_allergens = "gluten, eggs, milk, butter"
+            Cinnamon_roll_allergens = "gluten, eggs, milk, butter,cinnamon"
+            Lemon_slice_allergens = "gluten, eggs, milk, butter"
+            Raspberry_muffin_allergens = "gluten, eggs, milk, butter"
+            print("Allergens in this cake is : ")
+            Latte_allergens = "milk"
+            Cappuccino_allergens = "milk"
+            Americano_allergens = "No allergens"
+            Espresso_allergens = "No allergens"
+            Breakfast_tea_allergens = "milk"
+            #show allergens here
+
+
+            continue
         else:
             print("Sorry not available today")
             continue
@@ -70,19 +97,24 @@ def menu_remove():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         length = len(order)
+        #display a list of the items in the cart and the total price
         for i in range(0, length):
             print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
+        print(f"Total:  {sum(price)}€")
         print('0. To Proceed')
 
         try:
             select = int(input("Select the item you want to remove: "))
             
             if select >= 1 and select <= length:
-                print(f"Removed {order[select-1]}")
-                order.remove(order[select-1])
-                price.remove(price[select-1])
+                print(f"Removed {order[select-1]} -- {price[select-1]}")
+                #Removes the selected item and the price of the list
+                order.pop(select-1)
+                price.pop(select-1)
+                time.sleep(1)
             elif select == 0:
                 print("Proceeding to checkout...")
+
                 break
             else:
                 print("Invalid selection. Please try again.")
@@ -103,7 +135,7 @@ def menu_select(product):
         
         # Iterating through the list of products - enumerate just puts a number beside each product
         for i, k in enumerate(product, start=1):
-            print(f"{i}. {k.ljust(20)} {product[k]['price']} {product[k]['description']}")
+            print(f"{i}. {k.ljust(20)}" +  str(product[k]['price']).ljust(20) + f"{product[k]['description']}")
         print('0. To Proceed')
         
         try:
@@ -143,10 +175,14 @@ def main():
             os.system('cls' if os.name == 'nt' else 'clear')
             emp = input("Please log in with your name: ")
             employee(emp)
+            new_emp = employe.Employee(emp) ## Added
+            new_emp.menu()
             #print("employee")
         #If the person is customer, call definition of customer
         elif person == "c":
             os.system('cls' if os.name == 'nt' else 'clear')
+            #clear the list
+
             print("Welcome to The Coffee Stain")
             name = input("Please enter your name: ").title()
             # new_customer = Customer.Customer(name)
