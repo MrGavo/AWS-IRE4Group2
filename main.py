@@ -3,6 +3,7 @@ import jsonio
 import time
 from Product import Cake, Drink, Book
 import customer as Customer
+import employe
 
 cakes = jsonio.read_cakes()
 drinks = jsonio.read_drinks()
@@ -27,6 +28,7 @@ def customer_interface(name):
         print("(D)rinks")
         print("(C)akes")
         print("(B)ooks")
+        print("Do you want to see (A)llergens ?")
         print("Or are you ready to Check(O)ut ?")
         cust = input("Please make your selection : ").lower()
         if cust == "d":
@@ -68,6 +70,11 @@ def customer_interface(name):
             else:
                 break   
             break
+        elif cust == "a":
+            #show allergens here
+
+
+            continue
         else:
             print("Sorry not available today")
             continue
