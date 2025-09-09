@@ -38,20 +38,40 @@ class Employee:
 
     def add_product(self):      
         product = input("Which category you want to add? (cakes/drinks/books): ").lower()
-        name = input("Enter product name: ")
-        price = float(input("Enter price: "))
-        description = input("Please provide the description" )
-        stock = int(input("Enter stock quantity: "))
-        ## Created a dictionary to add new items 
-        new_item = {
-        name: {
-            "name" : name,
-            "description": description,
-            "price": price,
-            "stock": stock
+        if product == "books":
+            name = input("Enter product name: ")
+            price = float(input("Enter price: "))
+            description = input("Please provide the description" )
+            stock = int(input("Enter stock quantity: ")) 
+            genre = input("Enter genre:")
+            author = input("Enter the author of the book: ")
+### Created a dictionary to add new items           
+            new_item = {
+               name: {
+                "name" : name,
+                "price": price,
+                "description": description,
+                "stock": stock,
+                "genre": genre,
+                "author":author
+                }
             }
-        }
+        else:
+         name = input("Enter product name: ")
+         price = float(input("Enter price: "))
+         description = input("Please provide the description: ")
+         stock = int(input("Enter stock quantity: "))
 
+        # Dictionary for cakes/drinks
+        new_item = {
+         name: {
+                "name": name,
+                "price": price,
+                "description": description,
+                "stock": stock
+              }
+        }
+       
         if product == "cakes":
             jsonio.write_cakes(new_item)
         elif product == "drinks":
@@ -63,23 +83,31 @@ class Employee:
 
 
     def view_products(self):
-        print("\n--- Books ---")
-        books = jsonio.read_books()
         # print json to screen with human-friendly formatting
-        pprint.pprint(books, compact=True)
+
         print("\n--- Cakes ---")
         cakes = jsonio.read_cakes() 
-        pprint.pprint(cakes, compact=True)
+        print(cakes)
+
         print("\n--- Drinks ---")
         drinks = jsonio.read_drinks()  
-        pprint.pprint(drinks, compact=True)
+        print(drinks)
+
+        print("\n--- Books ---")
+        books = jsonio.read_books()
+        print(books)
+
+
 
 
     def remove_product(self):
         product = input("Remove from which category? (cakes/drinks/books): ").lower()
         stock = {}   
         if product == "cakes":
-            stock = jsonio.read_cakes()
+            stock = jsonio.read_cakes() 
+            # cakes = jsonio.read_cakes()
+            # stock = list(cakes.keys())
+            print(stock)
         elif product == "drinks":
             stock = jsonio.read_drinks() 
         elif product == "books":
@@ -87,6 +115,30 @@ class Employee:
         else:
             print("Invalid category.")
             return
+
+        item_to_remove = input("Enter the name of the item you want to remove: ").title()
+### Removing the item and wiriting back to the json 
+        if item_to_remove in stock:
+            del stock[item_to_remove] 
+            if product == "cakes":
+                jsonio.write_cakes(stock)
+            elif product == "drinks":
+                jsonio.write_drinks(stock)
+            elif product == "books":
+                jsonio.write_books(stock)
+
+            print(f"{item_to_remove} has been removed from {product}.")
+        else:
+            print(f"{item_to_remove} not found in {product}.")
+
+# one=Employee ("name")    
+# one.remove_product()   
+    
+   ## def check_stock(self):
+
+
+    ## def add_discount(self):  
+    
 
          
 
