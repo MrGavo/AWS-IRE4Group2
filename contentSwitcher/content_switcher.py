@@ -11,9 +11,9 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal, VerticalScroll
 from textual.widgets import Button, ContentSwitcher, DataTable, Markdown
 
-MARKDOWN_EXAMPLE = """# Our Range of Cakes
+MARKDOWN_EXAMPLE = """# ==== The Coffe Stain ====
 
-Our cakes are all made in **the Coffee Stain** by our bakers under the strictest
+Our cakes are all produced in **the Coffee Stain** under the strictest
 hygiene standards.
 
 ## Apple Pie
@@ -53,8 +53,8 @@ class ContentSwitcherApp(App[None]):
 
     def compose(self) -> ComposeResult:
         with Horizontal(id="buttons"):  
-            yield Button("DataTable", id="data-table")  
-            yield Button("Markdown", id="markdown")  
+            yield Button("Drinks", id="data-table")  
+            yield Button("Cakes", id="markdown")  
 
         with ContentSwitcher(initial="data-table"):  
             yield DataTable(id="data-table")
