@@ -53,20 +53,33 @@ def customer_interface(name):
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Going to check your basket")
             length = len(order)
+            #Checks if the basket is empty and sends the customer back to the main screen
+            if length == 0:
+                print("The basket is empty")
+                time.sleep(2)
+                continue
             #display the list of the basket and the total
             for i in range(0, length):
                 print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
             print(f"Total:  {sum(price)}€")
             print('0. To Proceed')
             #Asks what to remove of the basket
-            remove = input("Do you want to (A)dd or (R)emove more items?: ").lower()
+            remove = input("Do you want to (A)dd, (R)emove more items or (C)ontinue?: ").lower()
             #goes back to the main screen
             if remove == "a":
                 continue
             #goes to the remove screen
             elif remove == "r":
                 menu_remove()
-                
+                continue
+            elif remove == "c":
+                #employee asked to add discount here
+                print(f"Please pay: {sum(price)}€")
+                #Removes the items of the lists
+                for i in range(0,length):
+                    order.pop()
+                    price.pop()
+                #print(order, price)
             else:
                 break   
             break
@@ -83,6 +96,7 @@ def customer_interface(name):
             Espresso_allergens = "No allergens"
             Breakfast_tea_allergens = "milk"
             #show allergens here
+            time.sleep(3)
 
 
             continue
