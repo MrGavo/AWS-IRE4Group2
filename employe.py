@@ -127,7 +127,7 @@ class Employee:
             print("Invalid category.")
             return
 
-        item_to_remove = input("Enter the name of the item you want to remove: ")
+        item_to_remove = input("Enter the name of the item you want to remove: ").title()
 ### Removing the item and wiriting back to the json 
         if item_to_remove in stock:
             del stock[item_to_remove] 
