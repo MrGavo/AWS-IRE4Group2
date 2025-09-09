@@ -11,6 +11,8 @@ Modules
         |   drinks.json             - Drinks Data
         |   jsonio.py               - Json IO Module
         |   main.py                 - Main Program
+        |   customer.py             - Customer Actions
+        |   memploye.py             - Employee Actions
         |   Product.py              - Product Classes
         |   README.md
         |   test_classes.py         - Test Module for Classes
