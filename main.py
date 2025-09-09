@@ -24,6 +24,7 @@ def customer_interface(name):
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Welcome {name} !\n")
+        print("!! 3 or more items + our monthly discount code gets you big savings!!\n")
         print("Can we interest you in some...")
         print("(D)rinks")
         print("(C)akes")
@@ -73,7 +74,17 @@ def customer_interface(name):
                 continue
             elif remove == "c":
                 #employee asked to add discount here
-                print(f"Please pay: {sum(price)}€")
+                total = {sum(price)}
+                if len(order) >= 3:
+                    print(f"\nLooks like you have {len(order)} items in your basket")
+                    print("If you have a valid coupon you get a 50% discount")
+                    code = input("Enter your code : ")
+                    if code.lower() == "discount":
+                        total = round((sum(price) / 2), 2)
+                        print("\nCongratulations - You get half off !")
+                    else:
+                        print("Sorry - Not a valid code !")
+                print(f"Please pay: {total}€")
                 time.sleep(5)
                 #Removes the items of the lists
                 for i in range(0,length):
