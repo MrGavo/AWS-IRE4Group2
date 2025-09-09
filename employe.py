@@ -5,8 +5,6 @@ class Employee:
         self.name = name
 
     def menu(self):
-
-        
         print(f"\nWelcome {self.name} back")
         while True:
             print("\n--- Employee Menu ---")
@@ -42,8 +40,8 @@ class Employee:
         new_item = {
         name: {
             "name" : name,
-        "description": description,
-        "price": price,
+            "description": description,
+            "price": price,
             "stock": stock
             }
         }
