@@ -54,10 +54,8 @@ def customer_interface(name):
             if remove == "a":
                 continue
             elif remove == "r":
-                #Shows the list of the order that the customer placed with the price
-                for i, k in enumerate(order, start=1):
-                    print(f"{i}. {k.ljust(40)} {price[i-1]}")
-                print('0. To Proceed')
+                menu_remove()
+                
             else:
                 break   
             break
@@ -66,6 +64,31 @@ def customer_interface(name):
             continue
     # print(order) # MrGavo : just checking to see if all items are being addded
     time.sleep(1)
+
+#Shows the list of the order that the customer placed with the price
+def menu_remove():
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        length = len(order)
+        for i in range(0, length):
+            print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
+        print('0. To Proceed')
+
+        try:
+            select = int(input("Select the item you want to remove: "))
+            
+            if select >= 1 and select <= length:
+                print(f"Removed {order[select-1]}")
+                order.remove(order[select-1])
+                price.remove(price[select-1])
+            elif select == 0:
+                print("Proceeding to checkout...")
+                break
+            else:
+                print("Invalid selection. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
 
 
 # Menu length should be dynamic now based on the number of Products
@@ -126,7 +149,7 @@ def main():
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Welcome to The Coffee Stain")
             name = input("Please enter your name: ").title()
-            new_customer = Customer.Customer(name)
+            # new_customer = Customer.Customer(name)
             # new_customer.add_cart("cake")
             # new_customer.add_cart("coffee")
             # new_customer.add_cart("coke")
