@@ -103,13 +103,40 @@ def customer_interface(name):
             Cinnamon_roll_allergens = "gluten, eggs, milk, butter,cinnamon"
             Lemon_slice_allergens = "gluten, eggs, milk, butter"
             Raspberry_muffin_allergens = "gluten, eggs, milk, butter"
-            print("Allergens in this cake is : ")
+            Gooseberry_tart_allergens = "gluten, eggs, milk, butter"
+
+            cakes = {
+                "Chocolate Cake": Chocolate_cake_allergens,
+                "Apple Pie": Apple_pie_allergens,
+                "Cinnamon Roll": Cinnamon_roll_allergens,
+                "Lemon Slice": Lemon_slice_allergens,
+                "Raspberry Muffin": Raspberry_muffin_allergens,
+                "Gooseberry Tart" : Gooseberry_tart_allergens
+            }
+            #selected_cake = input("which cake \n").title()
+            for cake, allergens in cakes.items():
+                if cake == selected_cake.title():
+                    print(f"{cake} contains the following allergens: {allergens}")
+
+
             Latte_allergens = "milk"
             Cappuccino_allergens = "milk"
             Americano_allergens = "No allergens"
             Espresso_allergens = "No allergens"
             Breakfast_tea_allergens = "milk"
-            #show allergens here
+
+            drinks = {
+                "Latte": Latte_allergens,
+                "Cappuccino": Cappuccino_allergens,
+                "Americano": Americano_allergens,
+                "Espresso": Espresso_allergens,
+                "Breakfast Tea": Breakfast_tea_allergens
+            }
+            #selected_drink = input("which drink \n").title()
+            for drink, allergens in drinks.items():
+                if drink == selected_drink.title():
+                    print(f"{drink} contains the following allergens: {allergens}")
+
             time.sleep(3)
 
 
