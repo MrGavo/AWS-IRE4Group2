@@ -48,8 +48,13 @@ def customer_interface(name):
             menu_select(books)
             cust = ''
         elif cust== "o":
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Going to check your basket")
-            print(order)
+            length = len(order)
+            for i in range(0, length):
+                print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
+            print(f"Total:  {sum(price)}€")
+            print('0. To Proceed')
             remove = input("Do you want to (A)dd or (R)emove more items?: ").lower()
             if remove == "a":
                 continue
@@ -72,19 +77,20 @@ def menu_remove():
         length = len(order)
         for i in range(0, length):
             print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
+        print(f"Total:  {sum(price)}€")
         print('0. To Proceed')
 
         try:
             select = int(input("Select the item you want to remove: "))
             
             if select >= 1 and select <= length:
-                print(f"Removed {order[select-1]} {price[select-1]}")
+                print(f"Removed {order[select-1]} -- {price[select-1]}")
                 order.pop(select-1)
-                print(price[select-1])
                 price.pop(select-1)
                 time.sleep(1)
             elif select == 0:
                 print("Proceeding to checkout...")
+
                 break
             else:
                 print("Invalid selection. Please try again.")
@@ -105,7 +111,7 @@ def menu_select(product):
         
         # Iterating through the list of products - enumerate just puts a number beside each product
         for i, k in enumerate(product, start=1):
-            print(f"{i}. {k.ljust(20)} {product[k]['price']} {product[k]['description']}")
+            print(f"{i}. {k.ljust(20)}" +  str(product[k]['price']).ljust(20) + f"{product[k]['description']}")
         print('0. To Proceed')
         
         try:
