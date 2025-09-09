@@ -71,6 +71,17 @@ def customer_interface(name):
                 break   
             break
         elif cust == "a":
+            Chocolate_cake_allergens = "gluten, eggs, milk, butter, cocoa powder"
+            Apple_pie_allergens = "gluten, eggs, milk, butter"
+            Cinnamon_roll_allergens = "gluten, eggs, milk, butter,cinnamon"
+            Lemon_slice_allergens = "gluten, eggs, milk, butter"
+            Raspberry_muffin_allergens = "gluten, eggs, milk, butter"
+            print("Allergens in this cake is : ")
+            Latte_allergens = "milk"
+            Cappuccino_allergens = "milk"
+            Americano_allergens = "No allergens"
+            Espresso_allergens = "No allergens"
+            Breakfast_tea_allergens = "milk"
             #show allergens here
 
 
