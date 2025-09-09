@@ -28,30 +28,30 @@ def customer_interface(name):
         print("(D)rinks")
         print("(C)akes")
         print("(B)ooks")
-        print("Do you want to see (A)llergens ?")
-        print("Or are you ready to Check(O)ut ?")
+        print("Do you want to see the (A)llergens ?")
+        print("Or are you ready to Check(O)ut ?\n")
         cust = input("Please make your selection : ").lower()
         if cust == "d":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Today's drink menu is")
-            time.sleep(1)        
+            time.sleep(0.5)        
             menu_select(drinks)
             cust = ''
         elif cust == "c":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Today's cakes menu is")
-            time.sleep(1)
+            time.sleep(0.5)
             menu_select(cakes)
             cust = ''
         elif cust == "b":
             os.system('cls' if os.name == 'nt' else 'clear')
             print("See what's in our book shelf")
-            time.sleep(1) 
+            time.sleep(0.5) 
             menu_select(books)
             cust = ''
         elif cust== "o":
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("Going to check your basket")
+            print("Your basket is: \n")
             length = len(order)
             #Checks if the basket is empty and sends the customer back to the main screen
             if length == 0:
@@ -61,8 +61,7 @@ def customer_interface(name):
             #display the list of the basket and the total
             for i in range(0, length):
                 print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
-            print(f"Total:  {sum(price)}€")
-            print('0. To Proceed')
+            print(f"Total:  {sum(price)}€\n")
             #Asks what to remove of the basket
             remove = input("Do you want to (A)dd, (R)emove more items or (C)ontinue?: ").lower()
             #goes back to the main screen
@@ -75,14 +74,18 @@ def customer_interface(name):
             elif remove == "c":
                 #employee asked to add discount here
                 print(f"Please pay: {sum(price)}€")
+                time.sleep(5)
                 #Removes the items of the lists
                 for i in range(0,length):
                     order.pop()
                     price.pop()
+                break
                 #print(order, price)
             else:
-                break   
-            break
+                print("invalid selection")
+                time.sleep(1)
+                continue
+            
         elif cust == "a":
             Chocolate_cake_allergens = "gluten, eggs, milk, butter, cocoa powder"
             Apple_pie_allergens = "gluten, eggs, milk, butter"
@@ -146,11 +149,11 @@ def menu_select(product):
 
     while selection != 0:
         os.system('cls' if os.name == 'nt' else 'clear')
-        
+        print("------- MENU -------\n")
         # Iterating through the list of products - enumerate just puts a number beside each product
         for i, k in enumerate(product, start=1):
             print(f"{i}. {k.ljust(20)}" +  str(product[k]['price']).ljust(20) + f"{product[k]['description']}")
-        print('0. To Proceed')
+        print('\n0. To Proceed\n')
         
         try:
             selection = int(input("Select item to add to your basket: "))
@@ -179,6 +182,7 @@ def menu_select(product):
 
 
 def main():
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         #asks if it is the employee or the customer that will log in
         #os.system("cls")
@@ -197,7 +201,7 @@ def main():
             os.system('cls' if os.name == 'nt' else 'clear')
             #clear the list
 
-            print("Welcome to The Coffee Stain")
+            print("WELCOME to The Coffee Stain\n")
             name = input("Please enter your name: ").title()
             # new_customer = Customer.Customer(name)
             # new_customer.add_cart("cake")
