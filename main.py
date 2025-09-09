@@ -117,13 +117,13 @@ def main():
         person = input("Employee or Customer (E/C): ").lower()
         #if the person is Employee, call the definition of employee
         if person == "e":
-            os.system("cls")
+            os.system('cls' if os.name == 'nt' else 'clear')
             emp = input("Please log in with your name: ")
             employee(emp)
             #print("employee")
         #If the person is customer, call definition of customer
         elif person == "c":
-            os.system("cls")
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Welcome to The Coffee Stain")
             name = input("Please enter your name: ").title()
             new_customer = Customer.Customer(name)
