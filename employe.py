@@ -15,7 +15,6 @@ class Employee:
             print("2. View Products")
             print("3. Remove Product")
             print("4. Check Stock")
-            print("5. Logout")
             print("5. Add Discount")
             print("6. Logging Out")
             
