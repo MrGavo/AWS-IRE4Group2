@@ -239,7 +239,7 @@ def main():
         #if the person is Employee, call the definition of employee
         if person == "e":
             os.system('cls' if os.name == 'nt' else 'clear')
-            emp = input("Please log in with your name: ")
+            emp = input("Please log in with your name: ").title()
             #employee(emp)
             new_emp = employe.Employee(emp) ## Added
             new_emp.menu()

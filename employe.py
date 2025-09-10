@@ -1,16 +1,19 @@
 import jsonio
 import time
+import os
 # Created a class for employee 
 class Employee:
     def __init__(self, name):
         self.name = name
 
     def menu(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 
         print(f"\nWelcome {self.name} back")
         while True:
-            print("\n--- Employee Menu ---")
+            
+            print("\n--- Employee Menu ---\n")
             print("1. Add Product")
             print("2. View Products")
             print("3. Remove Product")
