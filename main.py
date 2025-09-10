@@ -98,13 +98,20 @@ def customer_interface(name):
                 continue
             
         elif cust == "a":
+            #cakes
             Chocolate_cake_allergens = "gluten, eggs, milk, butter, cocoa powder"
             Apple_pie_allergens = "gluten, eggs, milk, butter"
             Cinnamon_roll_allergens = "gluten, eggs, milk, butter,cinnamon"
             Lemon_slice_allergens = "gluten, eggs, milk, butter"
             Raspberry_muffin_allergens = "gluten, eggs, milk, butter"
             Gooseberry_tart_allergens = "gluten, eggs, milk, butter"
-
+            #drinks
+            Latte_allergens = "milk"
+            Cappuccino_allergens = "milk"
+            Americano_allergens = "No allergens"
+            Espresso_allergens = "No allergens"
+            Breakfast_tea_allergens = "milk"
+            
             cakes = {
                 "Chocolate Cake": Chocolate_cake_allergens,
                 "Apple Pie": Apple_pie_allergens,
@@ -113,18 +120,6 @@ def customer_interface(name):
                 "Raspberry Muffin": Raspberry_muffin_allergens,
                 "Gooseberry Tart" : Gooseberry_tart_allergens
             }
-            #selected_cake = input("which cake \n").title()
-            for cake, allergens in cakes.items():
-                if cake == selected_cake.title():
-                    print(f"{cake} contains the following allergens: {allergens}")
-
-
-            Latte_allergens = "milk"
-            Cappuccino_allergens = "milk"
-            Americano_allergens = "No allergens"
-            Espresso_allergens = "No allergens"
-            Breakfast_tea_allergens = "milk"
-
             drinks = {
                 "Latte": Latte_allergens,
                 "Cappuccino": Cappuccino_allergens,
@@ -132,7 +127,12 @@ def customer_interface(name):
                 "Espresso": Espresso_allergens,
                 "Breakfast Tea": Breakfast_tea_allergens
             }
-            #selected_drink = input("which drink \n").title()
+            selected_cake = input("which cake \n").title()
+            for cake, allergens in cakes.items():
+                if cake == selected_cake.title():
+                    print(f"{cake} contains the following allergens: {allergens}")
+
+            selected_drink = input("which drink \n").title()
             for drink, allergens in drinks.items():
                 if drink == selected_drink.title():
                     print(f"{drink} contains the following allergens: {allergens}")
