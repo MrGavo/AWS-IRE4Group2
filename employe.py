@@ -1,4 +1,5 @@
 import jsonio
+import time
 # Created a class for employee 
 class Employee:
     def __init__(self, name):
@@ -180,11 +181,15 @@ class Employee:
 
 # one=Employee ("name")    
 # one.remove_product()   
-    
-   ## def check_stock(self):
+    def check_stock(self):
+        print("checking stock...")
+        time.sleep(3)
+        return
 
-
-    ## def add_discount(self):  
+    def add_discount(self):  
+        print("adding discount...")
+        time.sleep(3)
+        return
     
 
 
