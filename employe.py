@@ -10,7 +10,7 @@ class Employee:
         os.system('cls' if os.name == 'nt' else 'clear')
 
 
-        print(f"\nWelcome {self.name} back")
+        print(f"Welcome back {self.name}")
         while True:
             
             print("\n--- Employee Menu ---\n")
