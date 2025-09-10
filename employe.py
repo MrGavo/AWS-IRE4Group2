@@ -23,7 +23,7 @@ class Employee:
             if options == "1":
                 self.add_product()
             elif options == "2":
-                self.view_product()
+                self.view_products()
             elif options == "3":
                 self.remove_product()
             elif options == "4":
@@ -97,19 +97,26 @@ class Employee:
 
     def view_products(self):
         # print json to screen with human-friendly formatting
+        while True:
+            print("\n--- Cakes ---")
+            cakes = jsonio.read_cakes() 
+            print(cakes)
 
-        print("\n--- Cakes ---")
-        cakes = jsonio.read_cakes() 
-        print(cakes)
+            print("\n--- Drinks ---")
+            drinks = jsonio.read_drinks()  
+            print(drinks)
 
-        print("\n--- Drinks ---")
-        drinks = jsonio.read_drinks()  
-        print(drinks)
+            print("\n--- Books ---")
+            books = jsonio.read_books()
+            print(books)
 
-        print("\n--- Books ---")
-        books = jsonio.read_books()
-        print(books)
-
+            choice = input("Do you want to continue (y/n): ").lower()
+            if choice == "y":
+                continue
+            elif choice == "n":
+                return
+            else:
+                print("Invalid input. Try again")
 
 
 
