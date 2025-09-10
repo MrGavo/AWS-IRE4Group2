@@ -240,7 +240,7 @@ def main():
         if person == "e":
             os.system('cls' if os.name == 'nt' else 'clear')
             emp = input("Please log in with your name: ")
-            employee(emp)
+            #employee(emp)
             new_emp = employe.Employee(emp) ## Added
             new_emp.menu()
             #print("employee")
