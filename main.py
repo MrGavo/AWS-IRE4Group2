@@ -112,7 +112,7 @@ def customer_interface(name):
             Espresso_allergens = "No allergens"
             Breakfast_tea_allergens = "milk"
             
-            cakes = {
+            cakes_al = {
                 "Chocolate Cake": Chocolate_cake_allergens,
                 "Apple Pie": Apple_pie_allergens,
                 "Cinnamon Roll": Cinnamon_roll_allergens,
@@ -120,7 +120,7 @@ def customer_interface(name):
                 "Raspberry Muffin": Raspberry_muffin_allergens,
                 "Gooseberry Tart" : Gooseberry_tart_allergens
             }
-            drinks = {
+            drinks_al = {
                 "Latte": Latte_allergens,
                 "Cappuccino": Cappuccino_allergens,
                 "Americano": Americano_allergens,
@@ -128,12 +128,12 @@ def customer_interface(name):
                 "Breakfast Tea": Breakfast_tea_allergens
             }
             selected_cake = input("which cake \n").title()
-            for cake, allergens in cakes.items():
+            for cake, allergens in cakes_al.items():
                 if cake == selected_cake.title():
                     print(f"{cake} contains the following allergens: {allergens}")
 
             selected_drink = input("which drink \n").title()
-            for drink, allergens in drinks.items():
+            for drink, allergens in drinks_al.items():
                 if drink == selected_drink.title():
                     print(f"{drink} contains the following allergens: {allergens}")
 
@@ -152,11 +152,12 @@ def menu_remove():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         length = len(order)
+        print("Your basket is: \n")
         #display a list of the items in the cart and the total price
         for i in range(0, length):
             print(f"{i+1}. "+ str(order[i]).ljust(20) + str(price[i]))
-        print(f"Total:  {sum(price)}€")
-        print('0. To Proceed')
+        print(f"Total:  {sum(price)}€\n")
+        print('0. To Proceed\n')
 
         try:
             select = int(input("Select the item you want to remove: "))
@@ -224,6 +225,15 @@ def main():
     while True:
         #asks if it is the employee or the customer that will log in
         #os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+        print("░╔════╦╗░░░░░╔═══╗░░░╔═╗╔═╗░░░░░░╔═══╗╔╗░░░░░░░░░")
+        print("░║╔╗╔╗║║░░░░░║╔═╗║░░░║╔╝║╔╝░░░░░░║╔═╗╠╝╚╗░░░░░░░░")
+        print("░╚╝║║╚╣╚═╦══╗║║░╚╬══╦╝╚╦╝╚╦══╦══╗║╚══╬╗╔╬══╦╦═╗░░")
+        print("░░░║║░║╔╗║║═╣║║░╔╣╔╗╠╗╔╩╗╔╣║═╣║═╣╚══╗║║║║╔╗╠╣╔╗╗░")
+        print("░░░║║░║║║║║═╣║╚═╝║╚╝║║║░║║║║═╣║═╣║╚═╝║║╚╣╔╗║║║║║░")
+        print("░░░╚╝░╚╝╚╩══╝╚═══╩══╝╚╝░╚╝╚══╩══╝╚═══╝╚═╩╝╚╩╩╝╚╝░")
+        print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n\n")
         
         person = input("Employee or Customer (E/C): ").lower()
         #if the person is Employee, call the definition of employee
