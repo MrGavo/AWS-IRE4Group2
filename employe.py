@@ -7,12 +7,9 @@ class Employee:
         self.name = name
 
     def menu(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
-
-
-        print(f"Welcome back {self.name}")
         while True:
-            
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(f"Welcome back {self.name}")
             print("\n--- Employee Menu ---\n")
             print("1. Add Product")
             print("2. View Products")
@@ -101,6 +98,7 @@ class Employee:
     def view_products(self):
         # print json to screen with human-friendly formatting
         while True:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("\n--- Cakes ---")
             cakes = jsonio.read_cakes() 
             print(cakes)
